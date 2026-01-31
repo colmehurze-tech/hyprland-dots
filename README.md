@@ -5,6 +5,8 @@ Complete Hyprland configuration with themes and supporting tools.
 > ⚠️ **Status**: Still in development, there may be some bugs.
 > 
 > 📋 **Installation**: Still manual, no automated `install.sh` script yet.
+>
+> 🟨 **Note**: This dotfiles partially uses UWSM (Universal Wayland Session Manager). If you don't use UWSM, you should remove it from pacman/aur packages or nix pkgs, and also remove "uwsm app --" related keybinds and shell scripts.
 
 ## Prerequisites
 
