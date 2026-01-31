@@ -1,0 +1,574 @@
+/* ----------- 💫 Modern Glassmorphism Style 💫 -------- */
+/* swaync colors - Material Design 3 from matugen */
+
+@import '../../.config/waybar/matugen/waybar-colors.css';
+
+/* Base colors */
+@define-color noti-border-color @outline_variant;
+@define-color noti-border-hover @outline;
+@define-color noti-bg @on_primary;
+@define-color noti-bg-alt @on_secondary_container;
+@define-color noti-bg-alt2 @on_secondary;
+@define-color noti-bg-hover @on_primary_fixed;
+@define-color text-color @on_surface;
+@define-color text-secondary @on_surface_variant;
+@define-color accent-color @primary;
+@define-color accent-on @on_primary;
+@define-color accent-container @primary_container;
+@define-color accent-on-container @on_primary_container;
+
+/* Button colors */
+@define-color error-color @error;
+@define-color error-on @on_error;
+@define-color error-container @error_container;
+@define-color error-on-container @on_error_container;
+
+/* Surface colors */
+@define-color swaync_surface-bright @surface_bright;
+@define-color shadow-color @shadow;
+
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+    opacity: 1;
+    /* background: @noti-bg-hover; */
+    background: transparent;
+    border-radius: 12px;
+    /* border: 1px solid alpha(@noti-border-color, 0.5); */
+    /* box-shadow: 0 8px 32px @shadow-color; */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.notification-row {
+    outline: none;
+    /* margin: 4px 0; */
+    /* background: alpha(@noti-bg, 0.7); */
+
+}
+
+.notification {
+    background: alpha(@noti-bg, 0.81);
+    
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 16px;
+    border-radius: 16px;
+    /* border: 1px solid alpha(@noti-border-color, 0.5); */
+    /* box-shadow: 0 8px 32px @shadow-color; */
+    margin: 3px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.notification:hover {
+    background: alpha(@noti-bg-hover, 0.8);
+    /* border: 1px solid alpha(@noti-border-hover, 0.6); */
+    /* box-shadow: 0 8px 40px @shadow-color; */
+    transform: translateY(-2px) scale(1.01);
+}
+
+.notification-default-action {
+    margin: 0;
+    padding: 0;
+    border-radius: 16px;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button {
+    background: alpha(@error-color, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: @error-on;
+    text-shadow: none;
+    padding: 8px;
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-right: 8px;
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    box-shadow: 0 4px 16px @shadow-color;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-button:hover {
+    background: alpha(@error-container, 0.9);
+    color: @error-on-container;
+    box-shadow: 0 6px 24px @shadow-color;
+    transform: scale(1.1);
+}
+
+.notification-action {
+    /* border: 1px solid alpha(@noti-border-color, 0.5); */
+    border-radius: 10px;
+    background: alpha(@noti-bg-alt, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: 4px;
+    padding: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    color: @text-color;
+    background: alpha(@noti-bg-hover, 0.7);
+    /* border: 1px solid alpha(@noti-border-hover, 0.6); */
+    /* box-shadow: 0 4px 16px @shadow-color; */
+    transform: translateY(-1px);
+}
+
+.notification-default-action {
+    border-radius: 12px;
+    margin: 0;
+}
+
+.notification-default-action:not(:only-child) {
+    border-radius: 16px 16px 10px 10px;
+}
+
+.notification-action:first-child {
+    border-radius: 10px 10px 10px 10px;
+    background: alpha(@noti-bg-alt, 0.6);
+}
+
+.notification-action:last-child {
+    border-radius: 10px 10px 10px 10px;
+    background: alpha(@noti-bg-alt, 0.6);
+}
+
+.inline-reply {
+    margin-top: 12px;
+}
+
+.inline-reply-entry {
+    background: alpha(@noti-bg-alt, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: @text-color;
+    caret-color: @text-color;
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    border-radius: 10px;
+    padding: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inline-reply-entry:focus {
+    border-color: @accent-color;
+    background: alpha(@noti-bg, 0.7);
+    box-shadow: 0 0 0 3px alpha(@accent-container, 0.3), 0 4px 16px @shadow-color;
+}
+
+.inline-reply-button {
+    font-size: 14px;
+    margin-left: 8px;
+    background: alpha(@accent-color, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    border-radius: 10px;
+    color: @accent-on;
+    padding: 12px 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inline-reply-button:disabled {
+    background: alpha(@noti-bg-alt, 0.5);
+    color: @text-secondary;
+    opacity: 0.5;
+    border: 1px solid alpha(@noti-border-color, 0.3);
+}
+
+.inline-reply-button:hover:not(:disabled) {
+    background: alpha(@primary_container, 0.9);
+    color: @accent-on-container;
+    box-shadow: 0 4px 16px @shadow-color;
+    transform: translateY(-1px);
+}
+
+.body-image {
+    margin-top: 12px;
+    color: @text-color;
+    border-radius: 12px;
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    overflow: hidden;
+}
+
+.summary {
+    font-size: 16px;
+    font-weight: 600;
+    background: transparent;
+    color: @text-color;
+    text-shadow: none;
+    margin-bottom: 4px;
+}
+
+.time {
+    font-size: 12px;
+    font-weight: 400;
+    background: transparent;
+    color: @color8;
+    text-shadow: none;
+    margin-right: 16px;
+    opacity: 0.7;
+}
+
+.body {
+    font-size: 14px;
+    font-weight: 400;
+    background: transparent;
+    color: @text-color;
+    text-shadow: none;
+    line-height: 1.4;
+}
+
+.control-center {
+    background: alpha(@noti-bg-alt2, 1);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    color: @text-color;
+    border-radius: 20px;
+    box-shadow: 0 8px 40px @shadow-color;
+    padding: 12px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.blank-window {
+    background: transparent;
+}
+
+.widget-title {
+    color: @text-color;
+    background: transparent;
+    padding: 16px;
+    margin: 3px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 14px;
+    border: none;
+    box-shadow: none;
+}
+
+.widget-title>button {
+    font-size: 12px;
+    color: @error-on;
+    border-radius: 10px;
+    background: alpha(@error-color, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    padding: 8px 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-title>button:hover {
+    background: alpha(@error-color-container, 0.9);
+    color: @error-on-container;
+    box-shadow: 0 4px 16px @shadow-color;
+    transform: translateY(-1px);
+}
+
+.widget-dnd {
+    background: transparent;
+    padding: 16px;
+    margin: 3px;
+    border-radius: 14px;
+    font-size: 14px;
+    color: @text-color;
+    border: none;
+    box-shadow: none;
+}
+
+.widget-dnd>switch {
+    border-radius: 24px;
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    background: alpha(@noti-bg-alt, 0.6);
+    box-shadow: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-dnd>switch:checked {
+    background: alpha(@accent-color, 0.85);
+    border: 1px solid alpha(@accent-color, 0.9);
+    box-shadow: 0 0 16px alpha(@accent-color, 0.5);
+}
+
+.widget-dnd>switch slider {
+    background: @swaync_surface-bright;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px @shadow-color;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-label {
+    margin: 3px;
+}
+
+.widget-label>label {
+    font-size: 16px;
+    font-weight: 500;
+    color: @text-color;
+}
+
+.widget-mpris {
+    color: @text-color;
+    background: transparent;
+    padding: 16px;
+    margin: 3px;
+    border-radius: 14px;
+    border: none;
+    box-shadow: none;
+}
+
+.widget-mpris > box > button {
+    padding: 12px;
+    margin: 4px;
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    background: alpha(@noti-bg-alt, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-mpris > box > button:hover {
+    background: alpha(@noti-bg-hover, 0.8);
+    border: 1px solid alpha(@noti-border-hover, 0.6);
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px @shadow-color;
+}
+
+.widget-mpris-player {
+    padding: 12px;
+    margin: 4px;
+}
+
+.widget-mpris-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.widget-mpris-subtitle {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.widget-buttons-grid {
+    font-size: 14px;
+    color: @text-color;
+    padding: 8px;
+    margin: 3px;
+    border-radius: 14px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.widget-buttons-grid>flowbox {
+    max-children-per-line: 6;
+    min-children-per-line: 6;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    margin: 2px;
+    background: alpha(@noti-bg-alt, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    color: @text-color;
+    padding: 8px;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: alpha(@noti-bg-hover, 0.8);
+    border: 1px solid alpha(@noti-border-hover, 0.6);
+    transform: translateY(-1px) scale(1.05);
+    box-shadow: 0 4px 16px @shadow-color;
+}
+
+.widget-menubar>box>.menu-button-bar>button {
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    padding: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-menubar>box>.menu-button-bar>button:hover {
+    background: alpha(@noti-bg-hover, 0.7);
+    box-shadow: 0 2px 8px @shadow-color;
+}
+
+.topbar-buttons>button {
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    padding: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.topbar-buttons>button:hover {
+    background: alpha(@noti-bg-hover, 0.7);
+    box-shadow: 0 2px 8px @shadow-color;
+}
+
+.widget-volume {
+    background: transparent;
+    padding: 16px;
+    margin: 3px;
+    border-radius: 14px;
+    border: none;
+    font-size: 18px;
+    color: @text-color;
+    box-shadow: none;
+}
+
+.widget-volume>box>button {
+    background: alpha(@noti-bg-alt, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid alpha(@noti-border-color, 0.5);
+    border-radius: 10px;
+    padding: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-volume>box>button:hover {
+    background: alpha(@noti-bg-hoverest, 0.8);
+    border: 1px solid alpha(@noti-border-hover, 0.6);
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px @shadow-color;
+}
+
+.per-app-volume {
+    background-color: transparent;
+    padding: 16px;
+    margin: 3px;
+    border-radius: 12px;
+    border: none;
+    color: @text-color;
+    box-shadow: none;
+}
+
+.widget-backlight {
+    background: transparent;
+    padding: 16px;
+    margin: 3px;
+    border-radius: 14px;
+    border: none;
+    font-size: 18px;
+    color: @text-color;
+    box-shadow: none;
+}
+
+/* Modern Scrollbar */
+scrollbar {
+    background: transparent;
+    width: 8px;
+    border-radius: 10px;
+}
+
+scrollbar trough {
+    background: alpha(@noti-bg-alt, 0.4);
+    border-radius: 10px;
+    margin: 4px;
+}
+
+scrollbar slider {
+    background: alpha(@noti-bg-hover, 0.6);
+    border-radius: 10px;
+    min-height: 40px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+scrollbar slider:hover {
+    background: alpha(@noti-bg-hoverest, 0.8);
+}
+
+/* Smooth animations for all widgets */
+.widget-dnd,
+.widget-mpris,
+.widget-volume,
+.widget-backlight,
+.widget-buttons-grid,
+.widget-title {
+    animation: fadeInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Progress bars with glassmorphism */
+progressbar,
+trough {
+    min-height: 8px;
+    border-radius: 8px;
+    background: alpha(@noti-bg-alt, 0.5);
+    border: 1px solid alpha(@noti-border-color, 0.3);
+}
+
+progress {
+    border-radius: 8px;
+    background: alpha(@accent-color, 0.85);
+    box-shadow: 0 0 12px alpha(@accent-color, 0.5);
+}
+
+/* Scale with backdrop filter */
+scale trough {
+    min-height: 8px;
+    min-width: 4px;
+    border-radius: 8px;
+    background: alpha(@noti-bg-alt, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+scale highlight {
+    border-radius: 8px;
+    background: alpha(@accent-color, 0.85);
+    box-shadow: 0 0 12px alpha(@accent-color, 0.5);
+}
+
+scale slider {
+    min-height: 18px;
+    min-width: 18px;
+    border-radius: 50%;
+    background: @swaync_surface-bright;
+    box-shadow: 0 2px 8px @shadow-color;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+scale slider:hover {
+    min-height: 20px;
+    min-width: 20px;
+    box-shadow: 0 4px 16px @shadow-color;
+}

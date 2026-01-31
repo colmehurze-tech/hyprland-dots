@@ -1,0 +1,2 @@
+export MATUGEN_PRIMARY_HEX="#b5c4ff"
+export MATUGEN_ON_SURFACE_HEX="#c6c6d0"

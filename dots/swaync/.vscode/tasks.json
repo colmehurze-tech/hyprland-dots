@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Backup current style.css",
+			"type": "shell",
+			"command": "cp -f style.css backup/style.css.bak.$(date +%s) && echo \"Backed up style.css\""
+		},
+		{
+			"label": "Restart swaync",
+			"type": "shell",
+			"command": "pkill swaync && sleep 0.5 && swaync > /dev/null 2>&1 &",
+			"isBackground": false
+		}
+	]
+}

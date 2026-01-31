@@ -1,0 +1,59 @@
+[config]
+# Kalau di terminal pakai -t scheme-vibrant, tulis gini:
+color_scheme_type = "scheme-vibrant"
+
+# Kalau di terminal pakai -m light, tulis gini:
+mode = "light"
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+post_hook = "kill -SIGUSR1 $(pidof kitty)"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/matugen/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/matugen/rofi-colors.rasi'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/matugen-cava'
+output_path = '~/.config/cava/config'
+post_hook = "pkill -USR1 cava"
+
+[templates.spicetify]
+input_path = '~/.config/matugen/templates/spotify-colors.ini'
+output_path = '~/.config/spicetify/Themes/text/color.ini'
+
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/midnight-discord.css'
+output_path = '~/.config/vesktop/themes/matugen.css'
+
+[templates.general]
+input_path = '~/.config/matugen/templates/general-colors.conf'
+output_path = '~/.config/hypr/general-colors.conf'
+
+[templates.waybar]
+input_path = '~/.config/matugen/templates/waybar-colors.css'
+output_path = '~/.config/waybar/matugen/waybar-colors.css'
+
+
+[templates.pomodoro]
+input_path = '~/.config/matugen/templates/pomodoro-colors.sh'
+output_path = '~/.config/waybar/matugen/pomodoro-colors.sh'
+
+[templates.bash]
+input_path = '~/.config/matugen/templates/bash-colors.sh'
+output_path = '~/.config/kitty/bash-colors.sh'
+

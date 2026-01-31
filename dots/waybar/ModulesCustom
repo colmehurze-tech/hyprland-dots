@@ -1,0 +1,191 @@
+{
+
+
+"custom/hyprpicker": {
+	"format": " ",
+	// "on-click": "hyprpicker | wl-copy",
+	"on-click": "hyprpicker -a",
+	"on-click-right": "hyprpicker -a --format=rgb",
+	"tooltip": true,
+	// "tooltip-format": "Hyprpicker",
+	"tooltip-format": "Left-click: HEX\nRight-click: RGB"
+},
+
+// Hypridle inhibitor
+"custom/hypridle": {
+	"format": "󱫗 ",
+	"return-type": "json",
+	"escape": true,
+	"exec-on-event": true,
+	"interval": 60,
+	"exec": "$HOME/.config/hypr/scripts/Hypridle.sh status",
+	"on-click": "$HOME/.config/hypr/scripts/Hypridle.sh toggle",
+	"on-click-right": "hyprlock"
+},
+
+"custom/keyboard": {
+	"exec": "cat $HOME/.cache/kb_layout",
+	"interval": 1,
+	"format": " {}",
+	"on-click": "$HOME/.config/hypr/scripts/SwitchKeyboardLayout.sh",
+},
+
+
+"custom/lock": {
+	"format": "󰌾",
+	"on-click": "$HOME/.config/hypr/scripts/LockScreen.sh",
+	"tooltip": true,
+	"tooltip-format": "󰷛 Screen Lock",
+},
+
+"custom/menu": {
+	"format": "  ",
+	"on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window",
+	"on-click-middle": "$HOME/.config/hypr/UserScripts/WallpaperSelect.sh",
+	"on-click-right": "$HOME/.config/hypr/scripts/WaybarLayout.sh",
+	"tooltip": true,
+	"tooltip-format": "Left Click: Rofi Menu\nMiddle Click: Wallpaper Menu\nRight Click: Waybar Layout Menu",
+},
+// This is a custom cava visualizer
+"custom/cava_mviz": {
+	"exec": "$HOME/.config/hypr/scripts/WaybarCava.sh",
+	"format": "{}"
+},
+
+
+
+"custom/playerctl": {
+	"format": "<span>󰎈 <i>{}</i></span>",
+	"return-type": "json",
+	"max-length": 36,
+	"exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\", \"tooltip\": \"<b>Player:</b> <i>{{playerName}}</i>\\n<b>Artist:</b> <i>{{artist}}</i>\\n<b>Title:</b> <i>{{markup_escape(title)}}</i>\\n<b>Album:</b> <i>{{markup_escape(album)}}</i>\\n<b>Length:</b> <i>{{duration(position)}}/{{duration(mpris:length)}}</i>\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+	"on-click": "playerctl next",
+	"on-click-right": "playerctl previous",
+	"on-click-middle": "playerctl play-pause",
+	"scroll-step": 5.0,
+	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
+	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
+	"smooth-scrolling-threshold": 1,
+	"tooltip": true
+},
+
+"custom/power": {
+	"format": " ⏻ ", //⏻
+	// "format": "<img src='/home/sharland/Downloads/power-button-svgrepo-com.svg' />",
+	// "format": " ",
+	"on-click": "$HOME/.config/hypr/scripts/Wlogout.sh",
+	"on-click-right": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
+	"tooltip": true,
+	"tooltip-format": "Left Click: Logout Menu\nRight Click: Change Blur",
+},
+
+
+
+"custom/swaync": {
+	"tooltip": true,
+	"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+	"format": "{} {icon} ",
+	"format-icons": {
+		"notification": "<span foreground='red'><sup></sup></span>",
+		"none": "",
+		"dnd-notification": "<span foreground='red'><sup></sup></span>",
+		"dnd-none": "",
+		"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		"inhibited-none": "",
+		"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		"dnd-inhibited-none": ""
+	},
+	"return-type": "json",
+	"exec-if": "which swaync-client",
+	"exec": "swaync-client -swb",
+	"on-click": "sleep 0.1 && swaync-client -t -sw",
+	"on-click-right": "swaync-client -d -sw",
+	"escape": true,
+},
+
+// Separators
+"custom/separator#dot": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#dot-line": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#line": {
+	"format": "|",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank": {
+	"format": "",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank_2": {
+	"format": "  ",
+	"interval": "once",
+	"tooltip": false
+},
+"custom/separator#blank_3": {
+	"format": "   ",
+	"interval": "once",
+	"tooltip": false
+},
+
+"custom/countdown": {
+    "exec": "~/.config/waybar/waybar_scripts/the_end.sh",
+    "interval": 9600, // Update setiap satu jam
+    "format": "{} ",
+    "tooltip": false
+},
+
+
+"custom/multi-clock": {
+    "format": "󱑂 ",
+    "tooltip": true,
+    "tooltip-format": "Momoisay + Jam + Matrix (Peach Edition)",
+    "on-click": "~/.config/waybar/waybar_scripts/Momoisay.sh",
+    "on-click-right": "pkill -f momoisay && pkill -x tty-clock && pkill -x cmatrix && pkill -x cava",
+        "on-click-right": "pkill -f momoisay & hyprctl dispatch closewindow class:cava-float & hyprctl dispatch closewindow class:clock-floating & hyprctl dispatch closewindow class:matrix-floats & hyprctl keyword decoration:dim_inactive true"
+},
+
+"custom/network_usage": {
+    "format": "󰤨 {}", // 󱚺
+    "exec": "bash $HOME/.config/hypr/UserScripts/NetUsage.sh",
+    "interval": 60,
+},
+"custom/uptime": {
+    "format": "  {}",
+    // "exec": "uptime -p | sed 's/up //'",
+    "exec": "uptime | awk -F, '{sub(/.*up /,\"\",$1); split($1,a,\" \"); if (a[2] ~ /day/) print a[1]\"d \"a[3]\"h\"; else if ($1 ~ /:/) {split(a[1],t,\":\"); print t[1]\"h \"t[2]\"m\"} else print a[1]\"m\"}'",
+    "interval": 180,
+    "tooltip-format": "Your Uptime"
+},
+
+"custom/pomodoro_timer": {
+    "format": " {}",
+    "exec": "$HOME/.config/waybar/waybar_scripts/pomodoro.sh update",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "$HOME/.config/waybar/waybar_scripts/pomodoro.sh add",
+    "on-click-right": "$HOME/.config/waybar/waybar_scripts/pomodoro.sh sub",
+    "on-click-middle": "$HOME/.config/waybar/waybar_scripts/pomodoro.sh toggle",
+    "on-scroll-up": "$HOME/.config/waybar/waybar_scripts/pomodoro.sh reset",
+    "tooltip": false
+},
+
+"custom/pomodoro_task": {
+    "format": " {}",
+    "exec": "$HOME/.config/waybar/waybar_scripts/pomodoro.sh update task",
+    "return-type": "json",
+    "interval": 1,
+    "tooltip": false
+},
+
+
+
+
+}

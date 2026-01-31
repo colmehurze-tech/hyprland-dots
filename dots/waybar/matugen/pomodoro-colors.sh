@@ -1,0 +1,15 @@
+#!/bin/bash
+# Matugen generated colors for Pomodoro
+
+# Variabel Pomodoro
+COLOR_FOCUS="#ffb4ab"
+COLOR_BREAK="#e2bbdb"
+COLOR_TEXT="#e3e1e9"
+COLOR_PAUSED="#690005"
+
+
+COLOR_PRIMARY="#b5c4ff"
+COLOR_ON_PRIMARY="#1c2d61"
+COLOR_PRIMARY_CONTAINER="#344479"
+COLOR_ON_PRIMARY_CONTAINER="#dbe1ff"
+COLOR_BACKGROUND="#121318"

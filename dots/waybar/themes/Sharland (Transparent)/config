@@ -1,0 +1,49 @@
+// --- BAR BAGIAN BAWAH (BOTTOM) ---
+{
+  "include": [
+    "$HOME/.config/waybar/Modules",
+    "$HOME/.config/waybar/ModulesWorkspaces",
+    "$HOME/.config/waybar/ModulesCustom",
+    "$HOME/.config/waybar/ModulesGroups",
+    "$HOME/.config/waybar/UserModules"
+  ],
+  "layer": "top",
+  "position": "bottom",
+  "exclusive": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "spacing": 0,
+  "margin-top": 0,
+  "margin-bottom": 6,
+  "margin-left": 12,
+  "margin-right": 12,
+
+  "modules-left": [
+    // "custom/cava_mviz",
+    "group/music",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "group/monitor_pc_on_work",
+  ],
+  "modules-center": [
+    "hyprland/workspaces#rw",
+    // "custom/separator#dot-line",
+    "custom/separator#blank",
+    "group/notify",
+    "keyboard-state",
+    "group/pomodoro",
+  ],
+  "modules-right": [
+    // "custom/hyprpicker",
+
+    // "custom/separator#dot-line",
+    "tray",
+    "clock#ahr",
+
+//     group sama power
+    // "custom/uptime",
+    "group/power"
+  ]
+
+}
+

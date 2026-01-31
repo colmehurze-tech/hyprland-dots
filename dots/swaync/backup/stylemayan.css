@@ -1,0 +1,98 @@
+/* ----------- 💫 Dark Mustard Theme Edition 💫 -------- */
+
+/* Palet Warna: Mustard Gelap, Emas Tua, dan Hitam Arang */
+@define-color noti-border-color #D4A017;    /* Deep Mustard / Gold */
+@define-color noti-bg rgba(26, 27, 38, 0.95); /* Hitam Arang (Tokyo Night style) */
+@define-color noti-bg-alt #32344a;          /* Abu-abu gelap untuk kontras */
+@define-color noti-bg-hover #B8860B;       /* Dark Goldenrod untuk hover */
+@define-color text-color #EEE8AA;           /* Pale Goldenrod (Putih kekuningan) */
+
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 1rem;
+    color: @text-color;
+}
+
+.control-center {
+    background: @noti-bg;
+    border: 2px solid @noti-border-color;
+    color: @text-color;
+    border-radius: 12px;
+}
+
+/* Notifikasi individual */
+.notification {
+    background: @noti-bg-alt;
+    padding: 3px 10px 3px 6px;
+    border-radius: 10px;
+    border: 1px solid @noti-border-color;
+}
+
+/* Judul Widget (paling atas) */
+.widget-title {
+    color: @noti-bg;            /* Teks gelap di atas bar terang */
+    background: @noti-border-color; 
+    padding: 5px 10px;
+    margin: 8px;
+    border-radius: 10px;
+}
+
+.widget-title > button {
+    background: @noti-bg;
+    border: 1px solid @noti-bg;
+    color: @noti-border-color;
+}
+
+/* Grid Tombol (Power, Wifi, dll) */
+.widget-buttons-grid {
+    background: @noti-bg-alt;
+    margin: 8px;
+    border-radius: 12px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background: @noti-bg;
+    border: 1px solid @noti-border-color;
+    margin: 3px;
+    color: @noti-border-color;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background: @noti-border-color;
+    color: @noti-bg; /* Teks berubah gelap saat di-hover */
+}
+
+/* Widget Musik (MPRIS) */
+.widget-mpris {
+    background: @noti-bg-alt;
+    border: 1px solid @noti-border-color;
+    margin: 8px;
+    color: @text-color;
+}
+
+/* Slider Volume & Backlight */
+.widget-volume, .widget-backlight {
+    background: @noti-bg-alt;
+    margin: 5px 10px;
+    border-radius: 10px;
+}
+
+/* Warna Slider saat digeser - ini yang paling mencolok */
+scale trough highlight {
+    background: @noti-border-color;
+}
+
+/* Switch Do Not Disturb */
+.widget-dnd > switch {
+    background: @noti-bg-alt;
+    border: 1px solid @noti-border-color;
+}
+
+.widget-dnd > switch:checked {
+    background: @noti-border-color;
+}
+
+.widget-dnd > switch slider {
+    background: @noti-bg;
+}

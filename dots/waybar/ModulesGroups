@@ -1,0 +1,138 @@
+
+{
+"group/app_drawer": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/menu",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"custom/menu",
+		"custom/light_dark",
+		"custom/file_manager",
+		"custom/tty",
+		"custom/browser",
+		"custom/settings",
+	]
+},
+"group/motherboard": {
+	"orientation": "horizontal",
+	"modules": [
+		"cpu",
+		// "power-profiles-daemon",
+		// "disk",
+		"temperature",
+		"memory",
+	]
+},
+
+"group/mobo_drawer": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "cpu",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"temperature",		
+		"cpu",
+		"power-profiles-daemon",	
+		"memory",
+		"disk",
+	]
+},
+"group/laptop": {
+	"orientation": "inherit",
+	"modules": [
+		"backlight",
+		"battery",
+	]
+},
+
+
+"group/notify": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/swaync",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"custom/swaync",
+		"idle_inhibitor",
+		"custom/multi-clock",
+		"custom/hyprpicker",
+	]
+},
+
+"group/music": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/cava_mviz",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"custom/cava_mviz",
+		"custom/separator#blank",
+		"mpris",
+
+	]
+},
+
+"group/music": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "music-group",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"custom/cava_mviz",
+		"mpris",
+
+	]
+},
+
+"group/power": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "power-group",
+		"transition-left-to-right": false
+        },
+	"modules": [
+	"custom/power",
+    "custom/uptime",
+	]
+},
+
+"group/pomodoro": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "transition-left-to-right": false
+    },
+    "modules": [
+        "custom/pomodoro_timer",
+        "custom/pomodoro_task"
+    ]
+},
+
+"group/monitor_pc_on_work": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "transition-left-to-right": true
+    },
+    "modules": [
+        "cpu",
+        "temperature",
+        "memory",
+        "custom/network_usage",
+        "network#speed"
+    ]
+}
+
+}

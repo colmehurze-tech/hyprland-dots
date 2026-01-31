@@ -1,0 +1,240 @@
+@import '../../.config/waybar/matugen/waybar-colors.css';
+
+/* ---------- COLORS ---------- */
+
+@define-color bar-bg rgba(0,0,0,0);
+
+@define-color background-primary alpha(@surface, 0.54);
+/* @define-color background-primary alpha(@on_primary, 0.9); */
+/* @define-color background-primary @source_color;   */
+@define-color background-alt @secondary_container; 
+
+@define-color text @on_background;
+
+@define-color bg-active alpha(@primary, 0.95);  
+@define-color color-alt1 @inverse_surface;  
+@define-color color-alt2 @surface_tint;  
+@define-color color-alt3 alpha(@on_background, 0.4);  
+
+
+
+/* ---------- GLOBAL ---------- */
+
+* {
+    border: none;
+    outline: none;
+  /*  font-family: "JetBrainsMono Nerd Font", "Inter"; */
+    font-family: "Google Sans Flex","JetBrains Mono NF", "Font Awesome 7 Free";
+    font-size: 13px;
+    font-weight: bold;
+letter-spacing: 0.5px;
+}
+
+
+/* ---------- WAYBAR WINDOW ---------- */
+
+window#waybar {
+    background: transparent;
+    min-height: 38px;
+}
+
+window#waybar.top .modules-left {
+    border-radius: 27px;  /* Top-left: radius on bottom-right */
+    padding: 0;
+    margin: 0 9px;
+}
+
+
+window#waybar.top .modules-center {           
+    padding: 0 18px 0 18px;
+}
+
+
+window#waybar.bottom .modules-left {
+    border-radius: 27px;
+    
+    background: @background-primary ;
+    color: @text;
+    margin: 0 9px 0 0;
+    padding: 0 21px;
+    border-radius: 27px;
+}
+
+window#waybar.bottom .modules-center {
+    padding: 0 18px 0 18px;
+}
+
+
+window#waybar.bottom #workspaces {
+    border-radius: 27px;
+    padding: 4px 18px 4px 18px;
+
+}
+
+window#waybar.bottom #window {
+    border-radius: 27px;
+}
+
+
+/* ---------- LEFT SECTION (cava_mviz, separator, mpris, pulseaudio, microphone) ---------- */
+
+
+
+#custom-cava_mviz,
+#custom-playerctl,
+#pulseaudio {
+    color: @text;
+    padding: 0px 6px;
+}
+
+#pulseaudio {
+    margin: 0 9px 0 0;
+}
+
+/* #pulseaudio.muted {
+    color: #666666;
+} */
+
+#cpu,
+#memory,
+#temperature,
+#custom-network_usage
+{
+    background: transparent;
+    color: @text;
+    border: none;
+    border-bottom: none;
+    font-weight: 800;
+    margin: 0 9px ;
+}
+
+
+
+/* ---------- CENTER (workspaces, separator, notify group, multi-clock, hyprpicker, keyboard-state) ---------- */
+
+#workspaces {
+    background: @background-primary;
+    color: @text;
+    margin: 0 9px;  
+    padding: 4px 10px;
+    border-radius: 0 0 25px 25px;
+}
+
+#workspaces button {
+    color: @text;
+    padding: 0 5px;
+    transition: all 0.5s ease;
+}
+
+#workspaces button.active {
+    background: @bg-active;
+    color: @background-alt;
+    border-radius: 21px;  
+    min-width: 42px;
+}
+
+#workspaces button.urgent {
+    background: @color-alt1;
+    color: @text;
+}
+
+#workspaces button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+#custom-pomodoro_timer, #custom-pomodoro_task  {
+    margin: 6px 0;
+    border-radius: 0px;
+    padding: 0 0 0 0px;
+    background: @color-alt3;
+}
+
+#custom-pomodoro_timer {
+    border-radius: 0 21px  21px 0;
+    padding: 0 11px 0 0px;
+
+}
+
+
+#custom-swaync,
+#custom-multi-clock,
+#keyboard-state,
+#custom-hyprpicker,
+#idle_inhibitor
+{
+    background: alpha(@color-alt1, 0.6);
+    color: @surface_container;
+    border: none;
+    border-bottom: none;
+    font-weight: 800;
+    margin: 6px 0;
+    padding: 0 2px;
+   
+}
+
+#custom-swaync {
+    border-radius:  21px  0 0 21px ;
+    
+}
+
+
+/* ---------- RIGHT SECTION (clock, tray, uptime, power) ---------- */
+
+
+#clock {
+    color: @text;
+    border-radius: 27px;
+    padding: 0 18px;
+	font-size: 14px;
+    background: @background-primary;
+    margin: 0 9px 0 0; 
+}
+
+
+#tray {
+    background: @background-primary ;
+    color: @text;
+    margin: 0 9px 0 0;
+    padding: 0 21px;
+    border-radius: 27px;
+}
+
+#custom-uptime {
+    background: @background-primary ;
+    color: @text;
+    margin: 0 9px 0 0;
+    padding: 0 15px ;
+    border-radius: 27px;  
+}
+ 
+
+#custom-power {
+
+    background: @bg-active ;
+    color: @background-alt;
+    padding: 6px 9px 6px 6px;
+    margin: 0;  /* Removed margins to eliminate gaps */
+    border-radius: 30px;
+}
+
+
+/* ---------- SEPARATORS & MISC ---------- */
+
+#custom-separator#blank {
+    background: transparent;
+    color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 10px;
+}
+
+
+/* ---------- TOOLTIP ---------- */
+
+tooltip {
+    background: @background-primary;
+    color: @text-white;
+    border: 1px solid @text;
+    border-radius: 8px;
+    padding: 8px;
+}

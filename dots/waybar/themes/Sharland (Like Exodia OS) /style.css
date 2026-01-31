@@ -1,0 +1,243 @@
+/* ================================================== */
+/* 🎧 LO-FI VIBES WAYBAR - FULL CONFIG               */
+/* Palette: Matugen, Dark */
+/* ================================================== */
+
+@import '../../.config/waybar/matugen/waybar-colors.css';
+
+/* ---------- COLORS ---------- */
+
+@define-color bar-bg rgba(0,0,0,0);
+
+@define-color background-primary @secondary_container;
+/* @define-color background-primary alpha(@on_primary, 0.9); */
+/* @define-color background-primary @source_color;   */
+@define-color background-alt @surface; 
+
+@define-color text @on_background;
+
+@define-color bg-active @primary;  
+@define-color color-alt1 @inverse_surface;  
+@define-color color-alt2 @surface_tint;  
+@define-color color-alt3 @on_background;  
+
+
+
+/* ---------- GLOBAL ---------- */
+
+* {
+    border: none;
+    outline: none;
+  /*  font-family: "JetBrainsMono Nerd Font", "Inter"; */
+    font-family: "Google Sans Flex","JetBrains Mono NF", "Font Awesome 7 Free";
+    font-size: 13px;
+    font-weight: bold;
+letter-spacing: 0.5px;
+}
+
+
+/* ---------- WAYBAR WINDOW ---------- */
+
+window#waybar {
+    background: @background-alt ;
+    min-height: 36px;
+    
+}
+
+
+
+/* window#waybar.bottom .modules-left {
+    
+    
+    background: @background-primary ;
+    color: @text;
+    margin: 5px 9px;
+    padding: 0 21px;
+  
+}
+ */
+
+
+
+
+
+
+
+/* ---------- BOTTOM LEFT SECTION (cava_mviz, separator, mpris, pulseaudio, microphone) ---------- */
+
+
+
+
+#custom-playerctl,
+#pulseaudio {
+    color: @text;
+    padding: 0px 6px;
+}
+#custom-cava_mviz {
+	padding: 0px 6px 0 0px;
+}
+
+#pulseaudio {
+    margin: 0 9px 0 0;
+}
+
+/* #pulseaudio.muted {
+    color: #666666;
+} */
+
+
+/* ---------- BOTTOM CENTER (workspaces, separator, notify group, multi-clock, hyprpicker, keyboard-state) ---------- */
+
+#workspaces {
+    background: @background-primary;
+    color: @text;
+    margin: 0 9px;  
+    
+     margin: 5px 9px;
+    
+}
+
+#workspaces button {
+    color: @text;
+    padding: 0 5px;
+    transition: all 0.5s ease;
+}
+
+#workspaces button.active {
+    background: @bg-active;
+    color: @background-alt;
+    
+    min-width: 27px;
+}
+
+#workspaces button.urgent {
+    background: @color-alt1;
+    color: @text;
+}
+
+#workspaces button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+#custom-pomodoro_timer, #custom-pomodoro_task  {
+    margin: 6px 0;
+    
+    padding: 0 0 0 0px;
+    background: @background-primary;
+}
+
+#custom-pomodoro_timer {
+    
+    padding: 0 11px 0 0px;
+
+}
+
+
+
+
+/* ---------- MINIMALIST BLACK TEXT MODULES ---------- */
+/* Tanpa background, teks hitam pekat, tanpa border */
+
+#cpu,
+#memory,
+#temperature,
+#custom-network_usage
+{
+    background: transparent;
+    color: @text;
+    border: none;
+    border-bottom: none;
+    font-weight: 800;
+    margin: 0 9px;
+}
+
+
+#custom-swaync,
+#custom-multi-clock,
+#keyboard-state,
+#custom-hyprpicker,
+#idle_inhibitor
+{
+    background: @color-alt1;
+    color: @surface_container;
+    border: none;
+    border-bottom: none;
+    font-weight: 800;
+    /* margin: 0 9px 0 0; */
+    /* padding: 0 9px 0 0; */
+    margin: 6px 0;
+  
+    padding: 0 2px;
+   
+}
+
+
+
+
+
+/* ---------- RIGHT SECTION (clock, tray, uptime, power) ---------- */
+
+#tray {
+    /* background: #834006 ;
+    color: @text; */
+    background: @background-primary ;
+    color: @text;
+    margin: 0 9px 0 0;
+    padding: 0 15px;
+     margin: 5px 4px 5px 8px;
+
+}
+
+#clock {
+    color: @text;
+    
+    padding: 0 18px;
+	font-size: 14px;
+    background: @background-primary;
+    margin: 0 9px 0 0; 
+     margin: 5px 4px;
+}
+
+
+
+
+
+#custom-uptime {
+    background: @background-primary ;
+    color: @text;
+    margin: 0 9px 0 0;
+    padding: 0 15px ;
+     margin: 5px 4px;
+}
+ 
+
+#custom-power {
+
+    background: @bg-active ;
+    color: @background-alt;
+    padding: 6px 9px 6px 6px;
+    margin: 5px 4px;  /* Removed margins to eliminate gaps */
+    
+}
+
+
+/* ---------- SEPARATORS & MISC ---------- */
+
+#custom-separator#blank {
+    background: transparent;
+    color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0 10px;
+}
+
+
+/* ---------- TOOLTIP ---------- */
+
+tooltip {
+    background: @background-primary;
+    color: @text-white;
+    border: 1px solid @mustard;
+    
+    padding: 8px;
+}
