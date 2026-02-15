@@ -19,7 +19,7 @@ Complete Hyprland configuration with themes and supporting tools.
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/hyprland-dots.git
+git clone https://github.com/despcodr/hyprland-dots.git
 cd hyprland-dots
 ```
 
